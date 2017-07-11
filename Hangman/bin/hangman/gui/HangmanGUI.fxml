@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hangman.gui.HangmanController">
+   <left>
+      <Pane fx:id="hangPane" prefHeight="350.0" prefWidth="250.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <Line fx:id="hangBase" endY="50.0" fill="BLACK" layoutX="121.0" layoutY="288.0" startX="-110.0" startY="50.0" visible="false" />
+            <Line fx:id="hangPole" endX="180.0" endY="-50.0" layoutX="27.0" layoutY="247.0" rotate="90.0" startX="-100.0" startY="-50.0" visible="false" />
+            <Line fx:id="hangTop" layoutX="167.0" layoutY="57.0" startX="-100.0" visible="false" />
+            <Line fx:id="hangRope" endX="100.0" layoutX="100.0" layoutY="90.0" rotate="90.0" startX="35.0" visible="false" />
+            <Line fx:id="hangTorso" layoutX="218.0" layoutY="197.0" rotate="90.0" startX="-100.0" stroke="#ff1e1e" visible="false" />
+            <Circle fx:id="hangHead" fill="#ff1e1e" layoutX="168.0" layoutY="123.0" radius="25.0" stroke="#ff1e1e" strokeType="INSIDE" visible="false" />
+            <Line fx:id="hangLeftLeg" endX="-20.0" fill="DODGERBLUE" layoutX="220.0" layoutY="288.0" rotate="100.0" startX="-100.0" stroke="#ff1e1e" visible="false" />
+            <Line fx:id="hangRightLeg" endX="-15.0" fill="#031424" layoutX="234.0" layoutY="287.0" rotate="80.0" startX="-100.0" stroke="#ff1e1e" visible="false" />
+            <Line fx:id="hangRightArm" endX="-30.0" layoutX="242.0" layoutY="208.0" rotate="75.0" startX="-100.0" stroke="#ff1e1e" visible="false" />
+            <Line fx:id="hangLeftArm" endX="-30.0" fill="#ff1e1e" layoutX="226.0" layoutY="210.0" rotate="100.0" startX="-100.0" stroke="#ff1e1e" visible="false" />
+         </children>
+      </Pane>
+   </left>
+   <top>
+      <Pane prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="184.0" layoutY="7.0" text="HANGMAN" textAlignment="CENTER" underline="true">
+               <font>
+                  <Font name="Comic Sans MS" size="71.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </top>
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefWidth="200.0" style="-fx-background-color: WHITE;">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newGame" text="New Game">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="12.0" />
+                     </font>
+                  </Button>
+                  <CheckBox fx:id="hintsBox" mnemonicParsing="false" onAction="#hintsPressed" text="Use AI">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="12.0" />
+                     </HBox.margin>
+                  </CheckBox>
+                  <Label text="( Choice Rankings :  Light Red &lt; Dark Red &lt; Dark Green &lt; Light Green )">
+                     <HBox.margin>
+                        <Insets left="15.0" top="12.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <Pane fx:id="letterPane" prefHeight="200.0" prefWidth="500.0" style="-fx-background-color: WHITE;" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
